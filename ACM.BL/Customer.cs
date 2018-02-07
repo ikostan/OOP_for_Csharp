@@ -22,7 +22,7 @@ namespace ACM.BL
         private int _customerId;
 
         /// <summary>
-        /// Counter -> shows how many instances of Customer type were created
+        /// No args constructor
         /// </summary>
         public Customer()
         {
@@ -30,7 +30,35 @@ namespace ACM.BL
         }
 
         /// <summary>
-        /// Counter -> shows how many customers were created
+        /// Parameterised constructor
+        /// </summary>
+        public Customer(string firstName, 
+                        string lastName, 
+                        string email)
+        {
+            Customer.InstanceCount += 1;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Parameterised constructor
+        /// </summary>
+        public Customer(string firstName, 
+                        string lastName, 
+                        string email, 
+                        string homeAddress, 
+                        string workAddress)
+        {
+            Customer.InstanceCount += 1;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Counter -> shows how many instances of Customer type were created
         /// </summary>
         public static int InstanceCount { get; private set; }
 
@@ -189,6 +217,17 @@ namespace ACM.BL
         {
             //TODO: write the code that retreives customer according to id
             return new Customer();
+        }
+
+        /// <summary>
+        /// Get list of customers customer
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        public IEnumerable<Customer> Retreive()
+        {
+            //TODO: write the code that retreives list of customers
+            return new List<Customer>();
         }
 
         //End of Class

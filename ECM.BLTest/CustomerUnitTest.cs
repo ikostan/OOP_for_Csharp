@@ -149,7 +149,6 @@ namespace ECM.BLTest
             Assert.AreEqual(expected, c.FullName);
         }
 
-        /*
         /// <summary>
         /// FullName property validation.
         /// FirstName empty.
@@ -164,11 +163,21 @@ namespace ECM.BLTest
             string expected = "Doe";
             string fName = "  ";
             string lName = " DOE ";
-            c.FirstName = fName;
-            c.LastName = lName;
+            string error = null;
+
+            try
+            {
+                c.LastName = lName;
+                c.FirstName = fName;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
 
             //Assert
             Assert.AreEqual(expected, c.FullName);
+            Assert.AreEqual(ErrorMessages.EmptyFirstName, error);
         }
 
         /// <summary>
@@ -185,13 +194,23 @@ namespace ECM.BLTest
             string expected = "John";
             string fName = " joHn ";
             string lName = "  ";
-            c.FirstName = fName;
-            c.LastName = lName;
+
+            string error = null;
+
+            try
+            {
+                c.FirstName = fName;
+                c.LastName = lName;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
 
             //Assert
             Assert.AreEqual(expected, c.FullName);
+            Assert.AreEqual(ErrorMessages.EmptyLastName, error);
         }
-        */
 
         //End of class
     }

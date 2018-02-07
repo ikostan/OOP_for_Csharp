@@ -42,6 +42,33 @@ namespace ECM.BLTest
         }
 
         /// <summary>
+        /// Test FirstName empty property
+        /// </summary>
+        [TestMethod]
+        public void FirstNameEmptyTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string expected = "John";
+            string name = " ";
+            string error;
+
+            try
+            {
+                c.FirstName = name;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
+
+            //Assert
+            Assert.AreEqual(expected, c.FirstName);
+        }
+
+        /// <summary>
         /// Test LastName property
         /// </summary>
         [TestMethod]
@@ -88,6 +115,48 @@ namespace ECM.BLTest
             string expected = "Doe, John";
             string fName = " joHn ";
             string lName = " DOE ";
+            c.FirstName = fName;
+            c.LastName = lName;
+
+            //Assert
+            Assert.AreEqual(expected, c.FullName);
+        }
+
+        /// <summary>
+        /// FullName property validation.
+        /// FirstName empty.
+        /// </summary>
+        [TestMethod]
+        public void FullNameFirsNameEmptyTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string expected = "Doe";
+            string fName = "  ";
+            string lName = " DOE ";
+            c.FirstName = fName;
+            c.LastName = lName;
+
+            //Assert
+            Assert.AreEqual(expected, c.FullName);
+        }
+
+        /// <summary>
+        /// FullName property validation.
+        /// LastName empty. 
+        /// </summary>
+        [TestMethod]
+        public void FullNameLastNameEmptyTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string expected = "John";
+            string fName = " joHn ";
+            string lName = "  ";
             c.FirstName = fName;
             c.LastName = lName;
 

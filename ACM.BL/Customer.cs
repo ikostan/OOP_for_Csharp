@@ -27,7 +27,17 @@ namespace ACM.BL
         public string FirstName
         {
             get { return _firstName; }
-            set { _firstName = CapitaliseFirstLetter(value); }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value.Trim()))
+                {
+                    throw new FormatException(ErrorMessages.EmptyFirstName);
+                }
+                else
+                {
+                    _firstName = CapitaliseFirstLetter(value);
+                }
+            }
         }
 
         /// <summary>
@@ -36,7 +46,17 @@ namespace ACM.BL
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = CapitaliseFirstLetter(value); }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value.Trim()))
+                {
+                    throw new FormatException(ErrorMessages.EmptyLastName);
+                }
+                else
+                {
+                    _lastName = CapitaliseFirstLetter(value);
+                }
+            }
         }
 
         /// <summary>
@@ -55,7 +75,22 @@ namespace ACM.BL
         /// </summary>
         public string FullName
         {
-            get { return LastName + ", " + FirstName; }
+            get
+            {
+                string fullName = LastName;
+
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if (!string.IsNullOrWhiteSpace(fullName))
+                    {
+                        fullName += ", ";
+                    }
+
+                    fullName += FirstName;
+                }
+
+                return fullName;
+            }
         }
 
         /// <summary>

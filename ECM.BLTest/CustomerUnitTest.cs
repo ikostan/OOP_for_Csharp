@@ -237,33 +237,35 @@ namespace ECM.BLTest
 
         /// <summary>
         /// Unit test for Validate() method.
-        /// Invalid values.
+        /// Invalid values: first/last name missing.
         /// </summary>
         [TestMethod]
-        public void ValidateInvalidTest()
+        public void ValidateFistLastNameMissingTest()
         {
             //Arrange
             Customer c = new Customer();
 
             //Act
+            Customer b = new Customer();
+            b.Email = "mail@mail.com";
+
             //Assert
-            Assert.IsFalse(c.Validate());
+            Assert.IsFalse(b.Validate());
+        }
+
+        /// <summary>
+        /// Unit test for Validate() method.
+        /// Invalid values: email missing.
+        /// </summary>
+        [TestMethod]
+        public void ValidateEmailMissingTest()
+        {
+            //Arrange
+            Customer c = new Customer();
 
             //Act
             c.FirstName = "John";
-
-            //Assert
-            Assert.IsFalse(c.Validate());
-
-            //Act
             c.LastName = "Doe";
-
-            //Assert
-            Assert.IsFalse(c.Validate());
-
-            //Act
-            c.LastName = " ";
-            c.Email = "mail@mail.com";
 
             //Assert
             Assert.IsFalse(c.Validate());
@@ -287,7 +289,6 @@ namespace ECM.BLTest
             //Assert
             Assert.IsTrue(c.Validate());
         }
-
 
         //End of class
     }

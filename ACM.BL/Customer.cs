@@ -21,6 +21,9 @@ namespace ACM.BL
         private string _workAddress;
         private int _customerId;
 
+        /// <summary>
+        /// Counter -> shows how many instances of Customer type were created
+        /// </summary>
         public Customer()
         {
             Customer.InstanceCount += 1;
@@ -137,6 +140,34 @@ namespace ACM.BL
         {
             get => _customerId;
             private set => _customerId = value;
+        }
+
+        /// <summary>
+        /// Validation method.
+        /// Verifies if FirstName/LastName/Email.
+        /// Returns false in case one of them is null or empty.
+        /// </summary>
+        /// <returns></returns>
+        public bool Validate()
+        {
+            bool isValid = true;
+
+            if (string.IsNullOrWhiteSpace(FirstName))
+            {
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(LastName))
+            {
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Email))
+            {
+                isValid = false;
+            }
+
+            return isValid;
         }
 
         //End of Class

@@ -235,6 +235,39 @@ namespace ECM.BLTest
             Assert.AreEqual(ErrorMessages.EmptyLastName, error);
         }
 
+        /// <summary>
+        /// Unit test for Validate() method
+        /// </summary>
+        [TestMethod]
+        public void ValidateTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+
+            //Assert
+            Assert.IsFalse(c.Validate());
+
+            //Act
+            c.FirstName = "John";
+
+            //Assert
+            Assert.IsFalse(c.Validate());
+
+            //Act
+            c.LastName = "Doe";
+
+            //Assert
+            Assert.IsFalse(c.Validate());
+
+            //Act
+            c.Email = "mail@mail.com";
+
+            //Assert
+            Assert.IsFalse(!c.Validate());
+        }
+
         //End of class
     }
 }

@@ -9,7 +9,7 @@ namespace ACM.BL
     /// <summary>
     /// Contains error messages
     /// </summary>
-    class ErrorMessages
+    public class ErrorMessages
     {
         /// <summary>
         /// Empty first name error

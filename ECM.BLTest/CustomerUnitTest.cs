@@ -51,9 +51,9 @@ namespace ECM.BLTest
             Customer c = new Customer();
 
             //Act
-            string expected = "John";
+            string expected = ErrorMessages.EmptyFirstName;
             string name = " ";
-            string error;
+            string error = null;
 
             try
             {
@@ -65,7 +65,7 @@ namespace ECM.BLTest
             }
 
             //Assert
-            Assert.AreEqual(expected, c.FirstName);
+            Assert.AreEqual(expected, error);
         }
 
         /// <summary>
@@ -103,6 +103,33 @@ namespace ECM.BLTest
         }
 
         /// <summary>
+        /// Test LastName empty property
+        /// </summary>
+        [TestMethod]
+        public void LastNameEmptyTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string expected = ErrorMessages.EmptyLastName;
+            string name = " ";
+            string error = null;
+
+            try
+            {
+                c.LastName = name;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
+
+            //Assert
+            Assert.AreEqual(expected, error);
+        }
+
+        /// <summary>
         /// FullName property validation
         /// </summary>
         [TestMethod]
@@ -122,6 +149,7 @@ namespace ECM.BLTest
             Assert.AreEqual(expected, c.FullName);
         }
 
+        /*
         /// <summary>
         /// FullName property validation.
         /// FirstName empty.
@@ -163,5 +191,8 @@ namespace ECM.BLTest
             //Assert
             Assert.AreEqual(expected, c.FullName);
         }
+        */
+
+        //End of class
     }
 }

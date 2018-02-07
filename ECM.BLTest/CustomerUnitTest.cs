@@ -212,6 +212,28 @@ namespace ECM.BLTest
             Assert.AreEqual(ErrorMessages.EmptyLastName, error);
         }
 
+        /// <summary>
+        /// Test static counter
+        /// </summary>
+        [TestMethod]
+        public void InstanceCountTest()
+        {
+            //Arrange
+            Customer c1 = new Customer();
+            Customer c2 = new Customer();
+
+            //Act
+
+            //Assert
+            Assert.AreEqual(2, Customer.InstanceCount);
+
+            //Arrange
+            Customer c3 = new Customer();
+
+            //Assert
+            Assert.AreEqual(3, Customer.InstanceCount);
+        }
+
         //End of class
     }
 }

@@ -21,6 +21,16 @@ namespace ACM.BL
         private string _workAddress;
         private int _customerId;
 
+        public Customer()
+        {
+            Customer.InstanceCount += 1;
+        }
+
+        /// <summary>
+        /// Counter -> shows how many customers were created
+        /// </summary>
+        public static int InstanceCount { get; private set; }
+
         /// <summary>
         /// Customer first name
         /// </summary>

@@ -27,7 +27,7 @@ namespace ACM.BL
         public string FirstName
         {
             get { return _firstName; }
-            set { _firstName = value; }
+            set { _firstName = CapitaliseFirstLetter(value); }
         }
 
         /// <summary>
@@ -36,7 +36,16 @@ namespace ACM.BL
         public string LastName
         {
             get { return _lastName; }
-            set { _lastName = value; }
+            set { _lastName = CapitaliseFirstLetter(value); }
+        }
+
+        /// <summary>
+        /// Capitalise first letter
+        /// </summary>
+        /// <returns></returns>
+        private string CapitaliseFirstLetter(string name)
+        {
+            return name.First().ToString().ToUpper() + name.Substring(1);
         }
 
         /// <summary>

@@ -40,12 +40,14 @@ namespace ACM.BL
         }
 
         /// <summary>
-        /// Capitalise first letter
+        /// Capitalise first letter. 
+        /// The rest of the name will be in lower case. 
+        /// Trim extra spaces (start/end).
         /// </summary>
         /// <returns></returns>
         private string CapitaliseFirstLetter(string name)
         {
-            return name.First().ToString().ToUpper() + name.Substring(1);
+            return name.Trim().First().ToString().ToUpper() + name.Trim().ToLower().Substring(1);
         }
 
         /// <summary>

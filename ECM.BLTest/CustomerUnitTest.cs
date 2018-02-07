@@ -42,7 +42,7 @@ namespace ECM.BLTest
         }
 
         /// <summary>
-        /// Test FirstName property
+        /// Test LastName property
         /// </summary>
         [TestMethod]
         public void LastNameTest()
@@ -73,6 +73,26 @@ namespace ECM.BLTest
 
             //Assert
             Assert.AreEqual(expected3, c.LastName);
+        }
+
+        /// <summary>
+        /// FullName property validation
+        /// </summary>
+        [TestMethod]
+        public void FullNameTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string expected = "Doe, John";
+            string fName = " joHn ";
+            string lName = " DOE ";
+            c.FirstName = fName;
+            c.LastName = lName;
+
+            //Assert
+            Assert.AreEqual(expected, c.FullName);
         }
     }
 }

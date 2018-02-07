@@ -236,16 +236,16 @@ namespace ECM.BLTest
         }
 
         /// <summary>
-        /// Unit test for Validate() method
+        /// Unit test for Validate() method.
+        /// Invalid values.
         /// </summary>
         [TestMethod]
-        public void ValidateTest()
+        public void ValidateInvalidTest()
         {
             //Arrange
             Customer c = new Customer();
 
             //Act
-
             //Assert
             Assert.IsFalse(c.Validate());
 
@@ -262,11 +262,32 @@ namespace ECM.BLTest
             Assert.IsFalse(c.Validate());
 
             //Act
+            c.LastName = " ";
             c.Email = "mail@mail.com";
 
             //Assert
-            Assert.IsFalse(!c.Validate());
+            Assert.IsFalse(c.Validate());
         }
+
+        /// <summary>
+        /// Unit test for Validate() method.
+        /// Valid values.
+        /// </summary>
+        [TestMethod]
+        public void ValidateValidTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            c.FirstName = "John";
+            c.LastName = "Doe";
+            c.Email = "mail@mail.com";
+
+            //Assert
+            Assert.IsTrue(c.Validate());
+        }
+
 
         //End of class
     }

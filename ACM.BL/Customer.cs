@@ -140,7 +140,18 @@ namespace ACM.BL
         public string Email
         {
             get { return _email; }
-            set { _email = value; }
+            set
+            {
+                if (value.Trim().Contains('@') && 
+                    value.Trim().Contains('.'))
+                {
+                    _email = value.Trim().ToLower();
+                }
+                else
+                {
+                    throw new FormatException(ErrorMessages.InvalidEmail);
+                }
+            }
         }
 
         /// <summary>

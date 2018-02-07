@@ -50,6 +50,9 @@
   <ItemGroup>
     <Compile Include="CustomerUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProductUnitTest.cs" />
+    <Compile Include="OrderUnitTest.cs" />
+    <Compile Include="OrderItemUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -26,5 +26,13 @@ namespace ACM.BL
         {
             get { return "Last name can not be empty!"; }
         }
+
+        /// <summary>
+        /// Invalid email address
+        /// </summary>
+        public static string InvalidEmail
+        {
+            get { return "Invalid email address!"; }
+        }
     }
 }

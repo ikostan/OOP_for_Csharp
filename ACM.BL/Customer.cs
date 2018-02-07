@@ -19,6 +19,7 @@ namespace ACM.BL
         private string _email;
         private string _homeAddress;
         private string _workAddress;
+        private int _customerId;
 
         /// <summary>
         /// Customer first name
@@ -39,6 +40,14 @@ namespace ACM.BL
         }
 
         /// <summary>
+        /// Customer Full Name. Getter only.
+        /// </summary>
+        public string FullName
+        {
+            get { return LastName + ", " + FirstName; }
+        }
+
+        /// <summary>
         /// Email address
         /// </summary>
         public string Email
@@ -47,7 +56,9 @@ namespace ACM.BL
             set { _email = value; }
         }
 
-        //Home address
+        /// <summary>
+        /// Home address
+        /// </summary>
         public string HomeAddress
         {
             get { return _homeAddress; }
@@ -61,6 +72,15 @@ namespace ACM.BL
         {
             get { return _workAddress; }
             set { _workAddress = value; }
+        }
+
+        /// <summary>
+        /// Customer id
+        /// </summary>
+        public int CustomerId
+        {
+            get => _customerId;
+            private set => _customerId = value;
         }
 
         //End of Class

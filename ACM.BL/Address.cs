@@ -9,7 +9,7 @@ namespace ACM.BL
     /// <summary>
     /// Holds Address Data
     /// </summary>
-    class Address
+    public class Address
     {
         private string _streetLine1;
         private string _streetLine2;

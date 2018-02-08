@@ -17,8 +17,8 @@ namespace ACM.BL
         private string _firstName;
         private string _lastName;
         private string _email;
-        private string _homeAddress;
-        private string _workAddress;
+        private Address _homeAddress;
+        private Address _workAddress;
         private int _customerId;
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ACM.BL
         public Customer(string firstName, 
                         string lastName, 
                         string email, 
-                        string homeAddress, 
-                        string workAddress) : this(firstName, lastName, email)
+                        Address homeAddress, 
+                        Address workAddress) : this(firstName, lastName, email)
         {
             this.HomeAddress = homeAddress;
             this.WorkAddress = workAddress;
@@ -162,19 +162,26 @@ namespace ACM.BL
         /// <summary>
         /// Home address
         /// </summary>
-        public string HomeAddress
+        public Address HomeAddress
         {
             get { return _homeAddress; }
-            set { _homeAddress = value; }
+            set
+            {
+                _homeAddress = (value.AddressType == AddressType.HOME) 
+                    ? value : throw new FormatException(ErrorMessages.InvalidAddressType);
+            }
         }
 
         /// <summary>
         /// Work address
         /// </summary>
-        public string WorkAddress
+        public Address WorkAddress
         {
             get { return _workAddress; }
-            set { _workAddress = value; }
+            set
+            { _workAddress = (value.AddressType == AddressType.WORK) 
+                    ? value : throw new FormatException(ErrorMessages.InvalidAddressType);
+            }
         }
 
         /// <summary>
@@ -212,27 +219,6 @@ namespace ACM.BL
             }
 
             return isValid;
-        }
-
-        /// <summary>
-        /// Saves the current customer
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            //TODO: write the code that saves the current customer
-            return true;
-        }
-
-        /// <summary>
-        /// Get customer by ID
-        /// </summary>
-        /// <param name="customerId"></param>
-        /// <returns></returns>
-        public Customer Retreive(int customerId)
-        {
-            //TODO: write the code that retreives customer according to id
-            return new Customer();
         }
 
         /// <summary>

@@ -34,5 +34,10 @@ namespace ACM.BL
         {
             get { return "Invalid email address!"; }
         }
+
+        public static string InvalidAddressType
+        {
+            get { return "Invalid address type!"; }
+        }
     }
 }

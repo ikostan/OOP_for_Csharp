@@ -35,7 +35,7 @@ namespace ACM.BL
         /// </summary>
         public Product Retrieve(int productId)
         {
-            // Code that retrieves the defined product
+            // TODO: Code that retrieves the defined product
             return new Product();
         }
 
@@ -45,7 +45,7 @@ namespace ACM.BL
         /// <returns></returns>
         public bool Save()
         {
-            // Code that saves the defined product
+            // TODO: Code that saves the defined product
             return true;
         }
 

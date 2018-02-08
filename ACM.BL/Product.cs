@@ -8,11 +8,18 @@ namespace ACM.BL
 {
     class Product
     {
+        /// <summary>
+        /// No args constructor
+        /// </summary>
         public Product()
         {
 
         }
 
+        /// <summary>
+        /// Constructor that allows to set a product id
+        /// </summary>
+        /// <param name="productId"></param>
         public Product(int productId)
         {
             this.ProductId = productId;

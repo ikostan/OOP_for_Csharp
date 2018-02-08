@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ACM.BL.AddressClassess;
+using ACM.BL.HelperClassess;
 
-
-namespace ACM.BL
+namespace ACM.BL.CustomerClassess
 {
     /// <summary>
     /// Customer entity definition

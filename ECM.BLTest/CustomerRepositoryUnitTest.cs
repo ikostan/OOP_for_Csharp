@@ -1,6 +1,7 @@
 ﻿using System;
 using ACM.BL;
 using ACM.BL.AddressClassess;
+using ACM.BL.CustomerClassess;
 using ACM.BL.RepositoryClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

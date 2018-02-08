@@ -40,12 +40,12 @@
   <ItemGroup>
     <Compile Include="AddressClassess\Address.cs" />
     <Compile Include="AddressClassess\AddressType.cs" />
-    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerClassess\Customer.cs" />
     <Compile Include="OrderClassess\OrderDisplay.cs" />
     <Compile Include="OrderClassess\OrderDisplayItem.cs" />
     <Compile Include="RepositoryClassess\AddressRepository.cs" />
     <Compile Include="RepositoryClassess\CustomerRepository.cs" />
-    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="HelperClassess\ErrorMessages.cs" />
     <Compile Include="OrderClassess\Order.cs" />
     <Compile Include="OrderClassess\OrderItem.cs" />
     <Compile Include="RepositoryClassess\OrderRepository.cs" />

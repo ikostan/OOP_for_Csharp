@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ACM.BL.OrderClassess
 {
+    /// <summary>
+    /// Contains properties in order to display a specific item from a specific order
+    /// </summary>
     public class OrderDisplayItem
     {
         public int OrderItemId { get; private set; }

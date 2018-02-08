@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL
+namespace ACM.BL.HelperClassess
 {
     /// <summary>
     /// Contains error messages

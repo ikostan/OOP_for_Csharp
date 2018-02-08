@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ACM.BL.OrderClassess
 {
+    /// <summary>
+    /// Contains properties in order to display a specific order
+    /// </summary>
     public class OrderDisplay
     {
         public string FirstName { get; set; }

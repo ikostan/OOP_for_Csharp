@@ -70,6 +70,12 @@ namespace ACM.BL.CustomerClassess
         public static int InstanceCount { get; private set; }
 
         /// <summary>
+        /// Holds customer type.
+        /// Enum.
+        /// </summary>
+        public CustomerType CustomerType { get; set; }
+
+        /// <summary>
         /// Customer first name
         /// </summary>
         public string FirstName

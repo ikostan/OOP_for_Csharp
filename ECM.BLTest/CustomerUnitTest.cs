@@ -399,12 +399,11 @@ namespace ECM.BLTest
                 AddressType = AddressType.WORK
             };
 
-            Customer c1 = new Customer(firstName, lastName, email);
-
             //Act
-            c1.HomeAddress = homeAddress;
-            c1.WorkAddress = workAddress;
-           
+            //c1.HomeAddress = homeAddress;
+            //c1.WorkAddress = workAddress;
+            Customer c1 = new Customer(firstName, lastName, email, homeAddress, workAddress);
+
             //Assert
             Assert.IsNotNull(c1);
             Assert.AreEqual(firstName, c1.FirstName);

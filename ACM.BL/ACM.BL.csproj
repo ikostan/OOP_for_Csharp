@@ -41,6 +41,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="AddressType.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="RepositoryClassess\AddressRepository.cs" />
     <Compile Include="RepositoryClassess\CustomerRepository.cs" />
     <Compile Include="ErrorMessages.cs" />
     <Compile Include="Order.cs" />

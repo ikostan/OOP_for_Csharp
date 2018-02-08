@@ -33,14 +33,14 @@ namespace ACM.BL
             //Temporary code
             if (customerId == 1)
             {
-                customer = new Customer(1);
+                customer = new Customer(customerId);
                 customer.Email = "email@mail.com";
                 customer.FirstName = "John";
                 customer.LastName = "Doe";
             }
             else
             {
-                customer = new Customer();
+                customer = new Customer(customerId);
             }
 
             return customer;

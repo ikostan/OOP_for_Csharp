@@ -1,5 +1,6 @@
 ﻿using System;
 using ACM.BL;
+using ACM.BL.AddressClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ECM.BLTest

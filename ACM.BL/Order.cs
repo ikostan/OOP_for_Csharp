@@ -23,6 +23,21 @@ namespace ACM.BL
         }
 
         /// <summary>
+        /// Holds customer Id
+        /// </summary>
+        public int CustomerId { get; set; }
+
+        /// <summary>
+        /// Holds related shipping address id
+        /// </summary>
+        public int ShippingAddressId { get; set; }
+
+        /// <summary>
+        /// Holds list of ordered items
+        /// </summary>
+        public IEnumerable<OrderItem> orderItems { get; set; }
+
+        /// <summary>
         /// Allows to set an order id
         /// </summary>
         /// <param name="orderId"></param>

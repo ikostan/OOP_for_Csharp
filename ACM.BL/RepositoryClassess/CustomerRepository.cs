@@ -1,13 +1,21 @@
-﻿using System;
+﻿using ACM.BL.RepositoryClassess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL
+namespace ACM.BL.RepositoryClassess
 {
     public class CustomerRepository
     {
+        private AddressRepository addressRepository { get; set; }
+
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
         /// <summary>
         /// Saves the current customer
         /// </summary>
@@ -23,12 +31,31 @@ namespace ACM.BL
         /// </summary>
         /// <param name="customerId"></param>
         /// <returns></returns>
-        public Customer Retreive(int customerId)
+        public Customer Retrieve(int customerId)
         {
             // TODO: write the code that retreives customer according to id
 
             // Create the instance of the Customer class
             Customer customer = new Customer(customerId);
+
+            //int homeId = 1;
+            //int workId = 2;
+            //customer.HomeAddress = addressRepository.Retrieve(homeId);
+            //customer.WorkAddress = addressRepository.Retrieve(workId);
+
+            List<Address> addresses = addressRepository.RetrieveByCustomerId(customerId).ToList();
+            foreach (var addr in addresses)
+            {
+                if (addr.AddressType == AddressType.HOME)
+                {
+                    customer.HomeAddress = addr;
+                }
+
+                if (addr.AddressType == AddressType.WORK)
+                {
+                    customer.WorkAddress = addr;
+                }
+            }
 
             // Temporary hard coded values to return
             // a populated customer
@@ -47,7 +74,7 @@ namespace ACM.BL
         /// </summary>
         /// <param name="customerId"></param>
         /// <returns></returns>
-        public IEnumerable<Customer> Retreive()
+        public IEnumerable<Customer> Retrieve()
         {
             //TODO: write the code that retreives list of customers
             return new List<Customer>();

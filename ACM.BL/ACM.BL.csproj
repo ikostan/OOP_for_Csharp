@@ -38,6 +38,8 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="AddressType.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="ErrorMessages.cs" />
     <Compile Include="Order.cs" />

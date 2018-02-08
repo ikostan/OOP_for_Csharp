@@ -1,4 +1,5 @@
 ﻿using System;
+using ACM.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ECM.BLTest
@@ -7,8 +8,29 @@ namespace ECM.BLTest
     public class OrderUnitTest
     {
         [TestMethod]
-        public void TestMethod()
+        public void ValidateValidTest()
         {
+            //Arrange
+            int id = 1;
+            Order o = new Order();
+
+            //Act
+            o.OrderDate = DateTimeOffset.Now;
+
+            //Assert
+            Assert.IsTrue(o.Validate());
+        }
+
+        [TestMethod]
+        public void ValidateInvalidTest()
+        {
+            //Arrange
+            Order o = new Order();
+
+            //Act
+
+            //Assert
+            Assert.IsFalse(o.Validate());
         }
     }
 }

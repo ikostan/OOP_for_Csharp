@@ -9,8 +9,11 @@ namespace ACM.BL
     /// <summary>
     /// Holds information about an order
     /// </summary>
-    class Order
+    public class Order
     {
+
+        private int _orderId;
+
         /// <summary>
         /// No args constructor
         /// </summary>
@@ -25,11 +28,11 @@ namespace ACM.BL
         /// <param name="orderId"></param>
         public Order(int orderId)
         {
-            this.OrderId = orderId;
+            this._orderId = orderId;
         }
 
         public DateTimeOffset? OrderDate { get; set; }
-        public int OrderId { get; private set; }
+        public int OrderId { get { return _orderId; } }
 
         /// <summary>
         /// Retrieve one order.
@@ -58,7 +61,10 @@ namespace ACM.BL
         {
             var isValid = true;
 
-            if (OrderDate == null) isValid = false;
+            if (OrderDate == null)
+            {
+                isValid = false;
+            }
 
             return isValid;
         }

@@ -30,13 +30,20 @@ namespace ACM.BL
         }
 
         /// <summary>
+        /// No args constructor
+        /// </summary>
+        public Customer(int id) : this()
+        {
+            this.CustomerId = id;
+        }
+
+        /// <summary>
         /// Parameterised constructor
         /// </summary>
         public Customer(string firstName, 
                         string lastName, 
-                        string email)
+                        string email) : this()
         {
-            Customer.InstanceCount += 1;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
@@ -49,12 +56,10 @@ namespace ACM.BL
                         string lastName, 
                         string email, 
                         string homeAddress, 
-                        string workAddress)
+                        string workAddress) : this(firstName, lastName, email)
         {
-            Customer.InstanceCount += 1;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Email = email;
+            this.HomeAddress = homeAddress;
+            this.WorkAddress = workAddress;
         }
 
         /// <summary>

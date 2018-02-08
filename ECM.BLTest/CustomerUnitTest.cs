@@ -8,6 +8,65 @@ namespace ECM.BLTest
     public class CustomerUnitTest
     {
         /// <summary>
+        /// Email validation test - valid value
+        /// </summary>
+        [TestMethod]
+        public void EmailValidTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+
+            //Act
+            string email = " mAil@maiL.coM ";
+            string expected = "mail@mail.com";
+            c.Email = email;
+
+            //Assert
+            Assert.AreEqual(expected, c.Email);
+        }
+
+        /// <summary>
+        /// Email validation test - invalid value
+        /// </summary>
+        [TestMethod]
+        public void EmailInvalidTest()
+        {
+            //Arrange
+            Customer c = new Customer();
+            string error = null;
+
+            //Act
+            try
+            {
+                string email1 = " mAil maiL.coM ";
+                c.Email = email1;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
+
+            //Assert
+            Assert.IsNull(c.Email);
+            Assert.AreEqual(error, ErrorMessages.InvalidEmail);
+
+            //Act
+            try
+            {
+                string email2 = " mAil@maiL coM ";
+                c.Email = email2;
+            }
+            catch (FormatException e)
+            {
+                error = e.Message;
+            }
+
+            //Assert
+            Assert.IsNull(c.Email);
+            Assert.AreEqual(error, ErrorMessages.InvalidEmail);
+        }
+
+        /// <summary>
         /// Test static counter
         /// </summary>
         [TestMethod]
@@ -290,65 +349,7 @@ namespace ECM.BLTest
             Assert.IsTrue(c.Validate());
         }
 
-        /// <summary>
-        /// Email validation test - valid value
-        /// </summary>
-        [TestMethod]
-        private void EmailValidTest()
-        {
-            //Arrange
-            Customer c = new Customer();
-
-            //Act
-            string email = " mAil@maiL.coM ";
-            string expected = " mail@mail.com";
-            c.Email = email;
-
-            //Assert
-            Assert.AreEqual(expected, c.Email);
-        }
-
-        /// <summary>
-        /// Email validation test - invalid value
-        /// </summary>
-        [TestMethod]
-        private void EmailInvalidTest()
-        {
-            //Arrange
-            Customer c = new Customer();
-            string error = null;
-
-            //Act
-            try
-            {
-                string email1 = " mAil maiL.coM ";
-                c.Email = email1;
-            }
-            catch (FormatException e)
-            {
-                error = e.Message;
-            }
-
-            //Assert
-            Assert.IsNull(c.Email);
-            Assert.AreEqual(error, ErrorMessages.InvalidEmail);
-
-            //Act
-            try
-            {
-                string email2 = " mAil@maiL coM ";
-                c.Email = email2;
-            }
-            catch (FormatException e)
-            {
-                error = e.Message;
-            }
-
-            //Assert
-            Assert.IsNull(c.Email);
-            Assert.AreEqual(error, ErrorMessages.InvalidEmail);
-        }
-
+        
         //End of class
     }
 }

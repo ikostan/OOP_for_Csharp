@@ -8,11 +8,18 @@ namespace ACM.BL
 {
     class OrderItem
     {
+        /// <summary>
+        /// No args constructor
+        /// </summary>
         public OrderItem()
         {
 
         }
 
+        /// <summary>
+        /// Allows to set an OrderItem id
+        /// </summary>
+        /// <param name="orderItemId"></param>
         public OrderItem(int orderItemId)
         {
             this.OrderItemId = orderItemId;
@@ -27,7 +34,7 @@ namespace ACM.BL
         /// </summary>
         public OrderItem Retrieve(int orderItemId)
         {
-            // Code that retrieves the defined order item
+            //TODO: Code that retrieves the defined order item
             return new OrderItem();
         }
 
@@ -37,7 +44,7 @@ namespace ACM.BL
         /// <returns></returns>
         public bool Save()
         {
-            // Code that saves the defined order item
+            //TODO: Code that saves the defined order item
             return true;
         }
 

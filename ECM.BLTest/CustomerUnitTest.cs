@@ -349,7 +349,91 @@ namespace ECM.BLTest
             Assert.IsTrue(c.Validate());
         }
 
-        
+        /// <summary>
+        /// Customer constructor test
+        /// </summary>
+        [TestMethod]
+        public void CustomerConstructorTest()
+        {
+            //Arrange
+            string firstName = "John";
+            string lastName = "Doe";
+            string email = "email@mail.com";
+
+            //Address
+            int addressId = 1;
+            string streetLine1 = "Street 1";
+            string streetLine2 = "Street 2";
+            string city = "New York";
+            string state = "New York";
+            string postalCode = "3453434";
+            string country = "USA";
+
+            Address homeAddress = new Address(addressId)
+            {
+                StreetLine1 = streetLine1,
+                StreetLine2 = streetLine2,
+                City = city,
+                State = state,
+                PostalCode = postalCode,
+                Country = country,
+                AddressType = AddressType.HOME
+            };
+
+            int _addressId = 2;
+            string _streetLine1 = "Street 3";
+            string _streetLine2 = "Street 4";
+            string _city = "Toronto";
+            string _state = "Ontario";
+            string _postalCode = "qwe23sd";
+            string _country = "Canada";
+
+            Address workAddress = new Address(_addressId)
+            {
+                StreetLine1 = _streetLine1,
+                StreetLine2 = _streetLine2,
+                City = _city,
+                State = _state,
+                PostalCode = _postalCode,
+                Country = _country,
+                AddressType = AddressType.WORK
+            };
+
+            Customer c1 = new Customer(firstName, lastName, email);
+
+            //Act
+            c1.HomeAddress = homeAddress;
+            c1.WorkAddress = workAddress;
+           
+            //Assert
+            Assert.IsNotNull(c1);
+            Assert.AreEqual(firstName, c1.FirstName);
+            Assert.AreEqual(lastName, c1.LastName);
+            Assert.AreEqual(email, c1.Email);
+
+            //Address validation - home
+            Assert.AreEqual(homeAddress.AddressType, c1.HomeAddress.AddressType);
+            Assert.AreEqual(AddressType.HOME, c1.HomeAddress.AddressType);
+            Assert.AreEqual(homeAddress.AddressId, c1.HomeAddress.AddressId);
+            Assert.AreEqual(homeAddress.City, c1.HomeAddress.City);
+            Assert.AreEqual(homeAddress.Country, c1.HomeAddress.Country);
+            Assert.AreEqual(homeAddress.PostalCode, c1.HomeAddress.PostalCode);
+            Assert.AreEqual(homeAddress.State, c1.HomeAddress.State);
+            Assert.AreEqual(homeAddress.StreetLine1, c1.HomeAddress.StreetLine1);
+            Assert.AreEqual(homeAddress.StreetLine2, c1.HomeAddress.StreetLine2);
+
+            //Address validation - work
+            Assert.AreEqual(workAddress.AddressType, c1.WorkAddress.AddressType);
+            Assert.AreEqual(AddressType.WORK, c1.WorkAddress.AddressType);
+            Assert.AreEqual(workAddress.AddressId, c1.WorkAddress.AddressId);
+            Assert.AreEqual(workAddress.City, c1.WorkAddress.City);
+            Assert.AreEqual(workAddress.Country, c1.WorkAddress.Country);
+            Assert.AreEqual(workAddress.PostalCode, c1.WorkAddress.PostalCode);
+            Assert.AreEqual(workAddress.State, c1.WorkAddress.State);
+            Assert.AreEqual(workAddress.StreetLine1, c1.WorkAddress.StreetLine1);
+            Assert.AreEqual(workAddress.StreetLine2, c1.WorkAddress.StreetLine2);
+        }
+
         //End of class
     }
 }

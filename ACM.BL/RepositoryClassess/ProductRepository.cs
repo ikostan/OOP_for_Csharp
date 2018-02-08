@@ -14,20 +14,17 @@ namespace ACM.BL
         public Product Retrieve(int productId)
         {
             // TODO: Code that retrieves the defined product
-            Product product = null;
 
+            // Code that retrieves the defined product
+            Product product = new Product(productId);
+
+            // Temporary hard coded values to return 
+            // a populated product
             if (productId == 2)
             {
-                product = new Product(productId)
-                {
-                    ProductName = "Product",
-                    ProductDescription = "Description",
-                    CurrentPrice = 15.95M
-                };
-            }
-            else
-            {
-                product = new Product(productId);
+                product.ProductName = "Product";
+                product.ProductDescription = "Description";
+                product.CurrentPrice = 15.95M;
             }
 
             return product;

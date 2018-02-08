@@ -28,19 +28,14 @@ namespace ACM.BL
             //TODO: write the code that retreives customer according to id
 
             //Create the instance of the Customer class
-            Customer customer = null;
+            Customer customer = new Customer(customerId);
 
             //Temporary code
             if (customerId == 1)
             {
-                customer = new Customer(customerId);
                 customer.Email = "email@mail.com";
                 customer.FirstName = "John";
                 customer.LastName = "Doe";
-            }
-            else
-            {
-                customer = new Customer(customerId);
             }
 
             return customer;

@@ -12,7 +12,7 @@ namespace ACM.BL
         /// Saves the current customer
         /// </summary>
         /// <returns></returns>
-        public bool Save()
+        public bool Save(Customer customer)
         {
             //TODO: write the code that saves the current customer
             return true;
@@ -25,12 +25,13 @@ namespace ACM.BL
         /// <returns></returns>
         public Customer Retreive(int customerId)
         {
-            //TODO: write the code that retreives customer according to id
+            // TODO: write the code that retreives customer according to id
 
-            //Create the instance of the Customer class
+            // Create the instance of the Customer class
             Customer customer = new Customer(customerId);
 
-            //Temporary code
+            // Temporary hard coded values to return
+            // a populated customer
             if (customerId == 1)
             {
                 customer.Email = "email@mail.com";

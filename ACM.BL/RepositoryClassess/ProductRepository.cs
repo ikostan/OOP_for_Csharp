@@ -34,7 +34,7 @@ namespace ACM.BL
         /// Saves the current product.
         /// </summary>
         /// <returns></returns>
-        public bool Save()
+        public bool Save(Product product)
         {
             // TODO: Code that saves the defined product
             return true;

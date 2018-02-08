@@ -221,17 +221,7 @@ namespace ACM.BL
             return isValid;
         }
 
-        /// <summary>
-        /// Get list of customers customer
-        /// </summary>
-        /// <param name="customerId"></param>
-        /// <returns></returns>
-        public IEnumerable<Customer> Retreive()
-        {
-            //TODO: write the code that retreives list of customers
-            return new List<Customer>();
-        }
-
+       
         //End of Class
     }
 }

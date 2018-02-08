@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ACM.BL
 {
-    class OrderItem
+    public class OrderItem
     {
+        private int _orderItemId;
+
         /// <summary>
         /// No args constructor
         /// </summary>
@@ -22,9 +24,9 @@ namespace ACM.BL
         /// <param name="orderItemId"></param>
         public OrderItem(int orderItemId)
         {
-            this.OrderItemId = orderItemId;
+            this._orderItemId = orderItemId;
         }
-        public int OrderItemId { get; private set; }
+        public int OrderItemId { get { return _orderItemId; } }
         public int OrderQuantity { get; set; }
         public int ProductId { get; set; }
         public decimal? PurchasePrice { get; set; }

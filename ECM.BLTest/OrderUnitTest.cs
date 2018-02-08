@@ -11,7 +11,6 @@ namespace ECM.BLTest
         public void ValidateValidTest()
         {
             //Arrange
-            int id = 1;
             Order o = new Order();
 
             //Act

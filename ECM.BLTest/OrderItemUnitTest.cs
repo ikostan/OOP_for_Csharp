@@ -1,4 +1,5 @@
 ﻿using System;
+using ACM.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ECM.BLTest
@@ -7,8 +8,16 @@ namespace ECM.BLTest
     public class OrderItemUnitTest
     {
         [TestMethod]
-        public void TestMethod()
+        public void OrderItemIdTest()
         {
+            //Arrange
+            int id = 1;
+            OrderItem oi = new OrderItem(1);
+
+            //Act
+
+            //Assert
+            Assert.AreEqual(id, oi.OrderItemId);
         }
     }
 }

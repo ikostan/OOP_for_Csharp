@@ -2,7 +2,7 @@
 using ACME.BL.OrderClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ACM.BLTest
+namespace ACME.BLTest
 {
     [TestClass]
     public class OrderItemUnitTest

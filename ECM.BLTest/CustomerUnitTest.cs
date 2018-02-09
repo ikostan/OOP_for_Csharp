@@ -4,7 +4,7 @@ using ACME.BL.CustomerClassess;
 using ACME.BL.HelperClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ACM.BLTest
+namespace ACME.BLTest
 {
     [TestClass]
     public class CustomerUnitTest

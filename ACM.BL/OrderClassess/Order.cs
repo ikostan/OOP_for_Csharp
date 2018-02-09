@@ -70,5 +70,7 @@ namespace ACM.BL.OrderClassess
         {
             return OrderId + ": " + OrderDate;
         }
+
+        //End of Class
     }
 }

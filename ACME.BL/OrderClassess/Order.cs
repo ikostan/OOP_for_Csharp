@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACME.COMMON;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace ACME.BL.OrderClassess
     /// <summary>
     /// Holds information about an order
     /// </summary>
-    public class Order
+    public class Order : ILoggable, IEquatable<Order>
     {
 
         private int _orderId;
@@ -69,6 +70,26 @@ namespace ACME.BL.OrderClassess
         public override string ToString()
         {
             return OrderId + ": " + OrderDate;
+        }
+
+        /// <summary>
+        /// Returns log info
+        /// </summary>
+        /// <returns></returns>
+        public string Log()
+        {
+            return this.ToString();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Order other)
+        {
+            //TODO: Implement Equals method
+            throw new NotImplementedException();
         }
 
         //End of Class

@@ -12,7 +12,7 @@ namespace ACME.BL.CustomerClassess
     /// <summary>
     /// Customer entity definition
     /// </summary>
-    public class Customer
+    public class Customer : ILoggable, IEquatable<Customer>
     {
         /// <summary>
         /// Backing fields
@@ -43,8 +43,8 @@ namespace ACME.BL.CustomerClassess
         /// <summary>
         /// Parameterised constructor
         /// </summary>
-        public Customer(string firstName, 
-                        string lastName, 
+        public Customer(string firstName,
+                        string lastName,
                         string email) : this()
         {
             this.FirstName = firstName;
@@ -55,10 +55,10 @@ namespace ACME.BL.CustomerClassess
         /// <summary>
         /// Parameterised constructor
         /// </summary>
-        public Customer(string firstName, 
-                        string lastName, 
-                        string email, 
-                        Address homeAddress, 
+        public Customer(string firstName,
+                        string lastName,
+                        string email,
+                        Address homeAddress,
                         Address workAddress) : this(firstName, lastName, email)
         {
             this.HomeAddress = homeAddress;
@@ -145,7 +145,7 @@ namespace ACME.BL.CustomerClassess
             get { return _email; }
             set
             {
-                if (value.Trim().Contains('@') && 
+                if (value.Trim().Contains('@') &&
                     value.Trim().Contains('.'))
                 {
                     _email = value.Trim().ToLower();
@@ -165,7 +165,7 @@ namespace ACME.BL.CustomerClassess
             get { return _homeAddress; }
             set
             {
-                _homeAddress = (value.AddressType == AddressType.HOME) 
+                _homeAddress = (value.AddressType == AddressType.HOME)
                     ? value : throw new FormatException(ErrorMessages.InvalidAddressType);
             }
         }
@@ -177,8 +177,9 @@ namespace ACME.BL.CustomerClassess
         {
             get { return _workAddress; }
             set
-            { _workAddress = (value.AddressType == AddressType.WORK) 
-                    ? value : throw new FormatException(ErrorMessages.InvalidAddressType);
+            {
+                _workAddress = (value.AddressType == AddressType.WORK)
+                      ? value : throw new FormatException(ErrorMessages.InvalidAddressType);
             }
         }
 
@@ -225,7 +226,47 @@ namespace ACME.BL.CustomerClassess
         /// <returns></returns>
         public override string ToString()
         {
-            return FullName;
+            return FullName + ": " + CustomerId;
+        }
+
+        /// <summary>
+        /// Returns log info
+        /// </summary>
+        /// <returns></returns>
+        public string Log()
+        {
+            return this.ToString();
+        }
+
+
+        public bool Equals(Customer other)
+        {
+            if (this.HomeAddress.AddressType == other.HomeAddress.AddressType &&
+                this.HomeAddress.AddressId == other.HomeAddress.AddressId &&
+                this.HomeAddress.City == other.HomeAddress.City &&
+                this.HomeAddress.Country == other.HomeAddress.Country &&
+                this.HomeAddress.PostalCode == other.HomeAddress.PostalCode &&
+                this.HomeAddress.State == other.HomeAddress.State &&
+                this.HomeAddress.StreetLine1 == other.HomeAddress.StreetLine1 &&
+                this.HomeAddress.StreetLine2 == other.HomeAddress.StreetLine2 &&
+                //
+                this.WorkAddress.AddressType == other.WorkAddress.AddressType &&
+                this.WorkAddress.AddressId == other.WorkAddress.AddressId &&
+                this.WorkAddress.City == other.WorkAddress.City &&
+                this.WorkAddress.Country == other.WorkAddress.Country &&
+                this.WorkAddress.PostalCode == other.WorkAddress.PostalCode &&
+                this.WorkAddress.State == other.WorkAddress.State &&
+                this.WorkAddress.StreetLine1 == other.WorkAddress.StreetLine1 &&
+                this.WorkAddress.StreetLine2 == other.WorkAddress.StreetLine2
+
+                )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         //End of Class

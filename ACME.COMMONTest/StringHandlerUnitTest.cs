@@ -15,12 +15,13 @@ namespace ACME.COMMONTest
             string expected = "Acme";
 
             //Act
-            string result = StringHandler.GetInstance().CapitaliseFirstLetter(str);
+            string result = StringHandler.CapitaliseFirstLetter(str);
 
             //Assert
             Assert.AreEqual(expected, result);
         }
 
+        /*
         [TestMethod]
         public void GetInstanceTest()
         {
@@ -33,6 +34,7 @@ namespace ACME.COMMONTest
             //Assert
             Assert.AreEqual(obj1, obj2);
         }
+        */
 
         //End of Class
     }

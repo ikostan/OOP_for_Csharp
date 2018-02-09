@@ -5,8 +5,9 @@ using System.Text;
 
 namespace ACME.COMMON
 {
-    public class StringHandler
+    public static class StringHandler
     {
+        /*
         /// <summary>
         /// Singeltone
         /// </summary>
@@ -27,6 +28,7 @@ namespace ACME.COMMON
 
             return _instance;
         }
+        */
 
         /// <summary>
         /// Capitalise first letter. 
@@ -34,7 +36,7 @@ namespace ACME.COMMON
         /// Trim extra spaces (start/end).
         /// </summary>
         /// <returns></returns>
-        public string CapitaliseFirstLetter(string name)
+        public static string CapitaliseFirstLetter(string name)
         {
             return name.Trim().First().ToString().ToUpper() + name.Trim().ToLower().Substring(1);
         }

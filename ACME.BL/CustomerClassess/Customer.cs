@@ -90,7 +90,7 @@ namespace ACME.BL.CustomerClassess
                 }
                 else
                 {
-                    _firstName = StringHandler.GetInstance().CapitaliseFirstLetter(value);
+                    _firstName = StringHandler.CapitaliseFirstLetter(value);
                 }
             }
         }
@@ -109,7 +109,7 @@ namespace ACME.BL.CustomerClassess
                 }
                 else
                 {
-                    _lastName = StringHandler.GetInstance().CapitaliseFirstLetter(value);
+                    _lastName = StringHandler.CapitaliseFirstLetter(value);
                 }
             }
         }

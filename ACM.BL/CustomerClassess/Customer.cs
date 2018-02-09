@@ -229,7 +229,15 @@ namespace ACM.BL.CustomerClassess
             return isValid;
         }
 
-       
+        /// <summary>
+        /// Returns customer full name
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return FullName;
+        }
+
         //End of Class
     }
 }

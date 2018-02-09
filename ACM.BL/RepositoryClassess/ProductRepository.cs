@@ -36,8 +36,24 @@ namespace ACM.BL.RepositoryClassess
         /// <returns></returns>
         public bool Save(Product product)
         {
-            // TODO: Code that saves the defined product
-            return true;
+            
+            var success = true;
+
+            if (product.IsValid && product.HasChanges)
+            {
+                if (product.IsNew)
+                {
+                    // TODO: Code that saves the defined product
+                }
+                else
+                {
+                    // TODO: Code that updates the defined product
+                }
+            }          
+
+            return success;
         }
+
+        //End of Class
     }
 }

@@ -28,9 +28,10 @@ namespace ACM.BL
         /// </summary>
         public bool IsValid
         {
-            //TODO: replase this code with the real logic
-            get { return true; }
+            get { return Validate(); }
         }
+
+        public abstract bool Validate();
 
         //End of Class
     }

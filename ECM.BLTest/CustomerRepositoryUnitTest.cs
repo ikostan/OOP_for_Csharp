@@ -1,11 +1,10 @@
 ﻿using System;
-using ACM.BL;
-using ACM.BL.AddressClassess;
-using ACM.BL.CustomerClassess;
-using ACM.BL.RepositoryClassess;
+using ACME.BL.AddressClassess;
+using ACME.BL.CustomerClassess;
+using ACME.BL.RepositoryClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ECM.BLTest
+namespace ACM.BLTest
 {
     [TestClass]
     public class CustomerRepositoryUnitTest

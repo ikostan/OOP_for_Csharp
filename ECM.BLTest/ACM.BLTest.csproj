@@ -61,9 +61,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ACM.BL\ACM.BL.csproj">
-      <Project>{2826ed45-a517-42b0-9873-37bade3a7cc5}</Project>
-      <Name>ACM.BL</Name>
+    <ProjectReference Include="..\ACME.BL\ACME.BL.csproj">
+      <Project>{826d3c04-7fdc-4105-b1e9-86a4cf45e0e3}</Project>
+      <Name>ACME.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACME.COMMON\ACME.COMMON.csproj">
+      <Project>{c07f3790-a14e-49b0-b265-a3236e4b25c4}</Project>
+      <Name>ACME.COMMON</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

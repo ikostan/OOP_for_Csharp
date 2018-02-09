@@ -1,11 +1,11 @@
-﻿using ACM.BL.AddressClassess;
+﻿using ACME.BL.AddressClassess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.RepositoryClassess
+namespace ACME.BL.RepositoryClassess
 {
     /// <summary>
     /// Retreives Addresses

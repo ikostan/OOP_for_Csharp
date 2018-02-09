@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ACM.BL.AddressClassess;
-using ACM.BL.HelperClassess;
+using ACME.BL.AddressClassess;
+using ACME.BL.HelperClassess;
+using ACME.COMMON;
 
-namespace ACM.BL.CustomerClassess
+namespace ACME.BL.CustomerClassess
 {
     /// <summary>
     /// Customer entity definition
@@ -89,7 +90,7 @@ namespace ACM.BL.CustomerClassess
                 }
                 else
                 {
-                    _firstName = CapitaliseFirstLetter(value);
+                    _firstName = StringHandler.GetInstance().CapitaliseFirstLetter(value);
                 }
             }
         }
@@ -108,20 +109,9 @@ namespace ACM.BL.CustomerClassess
                 }
                 else
                 {
-                    _lastName = CapitaliseFirstLetter(value);
+                    _lastName = StringHandler.GetInstance().CapitaliseFirstLetter(value);
                 }
             }
-        }
-
-        /// <summary>
-        /// Capitalise first letter. 
-        /// The rest of the name will be in lower case. 
-        /// Trim extra spaces (start/end).
-        /// </summary>
-        /// <returns></returns>
-        private string CapitaliseFirstLetter(string name)
-        {
-            return name.Trim().First().ToString().ToUpper() + name.Trim().ToLower().Substring(1);
         }
 
         /// <summary>

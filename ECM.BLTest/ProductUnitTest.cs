@@ -1,8 +1,8 @@
 ﻿using System;
-using ACM.BL;
+using ACME.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ECM.BLTest
+namespace ACM.BLTest
 {
     [TestClass]
     public class ProductUnitTest

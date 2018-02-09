@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using ACM.BL;
-using ACM.BL.AddressClassess;
-using ACM.BL.OrderClassess;
-using ACM.BL.RepositoryClassess;
+using ACME.BL;
+using ACME.BL.AddressClassess;
+using ACME.BL.OrderClassess;
+using ACME.BL.RepositoryClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ECM.BLTest
+namespace ACM.BLTest
 {
     [TestClass]
     public class ProductRepositoryUnitTest

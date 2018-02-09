@@ -1,9 +1,9 @@
 ﻿using System;
-using ACM.BL;
-using ACM.BL.OrderClassess;
+using ACME.BL;
+using ACME.BL.OrderClassess;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ECM.BLTest
+namespace ACM.BLTest
 {
     [TestClass]
     public class OrderUnitTest

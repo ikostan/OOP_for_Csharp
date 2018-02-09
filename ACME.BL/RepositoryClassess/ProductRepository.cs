@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.RepositoryClassess
+namespace ACME.BL.RepositoryClassess
 {
     public class ProductRepository
     {
@@ -35,19 +35,18 @@ namespace ACM.BL.RepositoryClassess
         /// </summary>
         /// <returns></returns>
         public bool Save(Product product)
-        {
-            
+        {        
             var success = true;
 
             if (product.IsValid && product.HasChanges)
             {
                 if (product.IsNew)
                 {
-                    // TODO: Code that saves the defined product
+                    // TODO: Code that saves the product
                 }
                 else
                 {
-                    // TODO: Code that updates the defined product
+                    // TODO: Code that updates the product
                 }
             }          
 

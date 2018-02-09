@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ACM.BL.AddressClassess
+namespace ACME.BL.AddressClassess
 {
     /// <summary>
     /// Holds Address type

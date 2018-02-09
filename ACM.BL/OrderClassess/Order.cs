@@ -17,10 +17,7 @@ namespace ACM.BL.OrderClassess
         /// <summary>
         /// No args constructor
         /// </summary>
-        public Order()
-        {
-
-        }
+        public Order(){}
 
         /// <summary>
         /// Holds customer Id
@@ -63,6 +60,15 @@ namespace ACM.BL.OrderClassess
             }
 
             return isValid;
+        }
+
+        /// <summary>
+        /// Returns order id + date
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return OrderId + ": " + OrderDate;
         }
     }
 }

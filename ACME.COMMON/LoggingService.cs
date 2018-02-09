@@ -12,7 +12,7 @@ namespace ACME.COMMON
         /// Write log
         /// </summary>
         /// <param name="items"></param>
-        public static void WriteLog(List<ILoggable> items)
+        public static void WriteLog(IEnumerable<ILoggable> items)
         {
             foreach (ILoggable item in items)
             {

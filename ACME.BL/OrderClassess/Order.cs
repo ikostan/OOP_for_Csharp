@@ -78,7 +78,8 @@ namespace ACME.BL.OrderClassess
         /// <returns></returns>
         public string Log()
         {
-            return this.ToString();
+            return this.OrderId + ": " + 
+                    "Date: " + this.OrderDate;
         }
 
         /// <summary>

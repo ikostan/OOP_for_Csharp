@@ -42,6 +42,8 @@
     <Compile Include="AddressClassess\AddressType.cs" />
     <Compile Include="CustomerClassess\Customer.cs" />
     <Compile Include="CustomerClassess\CustomerType.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="EntityStateOption.cs" />
     <Compile Include="OrderClassess\OrderDisplay.cs" />
     <Compile Include="OrderClassess\OrderDisplayItem.cs" />
     <Compile Include="RepositoryClassess\AddressRepository.cs" />
